@@ -38,6 +38,9 @@
 
   <body>
     <header>
+      <div class="faixa-3d">
+        Em desenvolvimento
+    </div>
       <div class="grid-layout">
         <nav>
           <!-- src="assets/image/logo-Gabrielcode.svg" -->
@@ -401,5 +404,14 @@
 
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
     <script type="module" src="assets/js/main.js"></script>
+    <script>
+      document.addEventListener('scroll', function() {
+          if (window.scrollY > 0) {
+              document.body.classList.add('rolled');
+          } else {
+              document.body.classList.remove('rolled');
+          }
+      });
+      </script>
   </body>
 </html>

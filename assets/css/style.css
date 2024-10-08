@@ -847,3 +847,25 @@ footer div{
     margin:0 auto
 }
 /*# sourceMappingURL=style.css.map */
+
+.faixa-3d {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5vh;
+    background-color: #ff0303ab;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Sombras para o efeito 3D */
+    transform: translateZ(0); /* Para melhorar a suavidade */
+    transition: transform 0.3s ease-out;
+}
+
+body.rolled .faixa-3d {
+    transform: translateY(-3px);
+}
