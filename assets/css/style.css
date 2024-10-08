@@ -5,7 +5,7 @@
     font-family:"Archivo"
 }
 ::selection{
-    background-color:rgb(16, 52, 166);
+    background-color:#1034a6;
     color:#fff
 }
 ul,ol{
@@ -633,8 +633,9 @@ header .grid-layout nav .nav-list li a:hover{
     transform-origin:bottom left
 }
 #s-services{
-    padding:96px 48px;
-    background-color:#151515
+    background-color:#151515;
+    color:#fff;
+    padding:96px 48px
 }
 @media screen and (max-width: 992px){
     #s-services{
@@ -642,7 +643,6 @@ header .grid-layout nav .nav-list li a:hover{
     }
 }
 #s-services .grid-layout h2{
-    text-align:center;
     padding-bottom:24px;
     color:#fff;
     font-size:4rem;
