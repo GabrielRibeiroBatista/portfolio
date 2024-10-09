@@ -869,3 +869,20 @@ footer div{
 body.rolled .faixa-3d {
     transform: translateY(-3px);
 }
+
+#logo_big {
+    width: 500px;
+    height: 300px;
+    border-radius: 15px; 
+    opacity: 0; /* Inicia invisível */
+    animation: fadeIn 3.5s ease forwards; /* Aplica a animação */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Começa invisível */
+    }
+    100% {
+        opacity: 1; /* Torna-se totalmente visível */
+    }
+}
