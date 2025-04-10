@@ -72,7 +72,7 @@ header .grid-layout nav{
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
-    height:100px;
+    height:160px;
     padding:0px 8px
 }
 header .grid-layout nav img{
@@ -188,7 +188,7 @@ header .grid-layout nav .nav-list li a:hover{
 #s-home .grid-layout #home{
     display:flex;
     align-items:center;
-    min-height:90vh;
+    min-height:60vh;
     padding:200px 0px;
     overflow:hidden;
     width:100%
@@ -292,7 +292,7 @@ header .grid-layout nav .nav-list li a:hover{
 }
 #s-about .grid-layout>div #creator-photo{
     width:47%;
-    background-image:url("../image/gabriel.jpg");
+    background-image:url("../image/gabriel.png");
     background-repeat:no-repeat;
     background-position:center;
     background-size:cover;
@@ -486,7 +486,7 @@ header .grid-layout nav .nav-list li a:hover{
 }
 #s-projects{
     padding:96px 48px;
-    text-align:center;
+    /* text-align:center; */
     background-color:#111
 }
 @media screen and (max-width: 992px){
