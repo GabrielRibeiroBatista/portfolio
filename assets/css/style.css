@@ -47,20 +47,18 @@ html{
     background-color:#111
 }
 ::-webkit-scrollbar-thumb{
-    background-color:rgb(16, 52, 166);
+    background-color:#1034a6;
     border-radius:8px
 }
 header{
     padding:0px 50px;
-    background:#111;
-    backdrop-filter:blur(24px);
-    -webkit-backdrop-filter:blur(24px);
-    border-bottom:1px solid #101013;
+    background-image: linear-gradient(to top, #111111, #15141a, #181822, #191b2b, #1a1e34, #1a203a, #192141, #172347, #16234c, #152250, #152155, #162059);border-bottom:1px solid #101013;
     z-index:999;
     width:100%;
     position:fixed;
     top:0;
-    left:0
+    left:0;
+    transition: all 0.3s ease-in-out; 
 }
 @media screen and (max-width: 992px){
     header{
@@ -72,11 +70,11 @@ header .grid-layout nav{
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
-    height:160px;
+    height:100px;
     padding:0px 8px
 }
 header .grid-layout nav img{
-    width:150px
+    width:95px
 }
 header .grid-layout nav .nav-list{
     list-style:none;
@@ -113,6 +111,12 @@ header .grid-layout nav .nav-list li a:hover::after{
 }
 header .grid-layout nav .nav-list li a:hover{
     color:#fff
+}
+header.scrolled {
+    box-shadow: 0 10px 25px rgba(196, 194, 194, 0.3);
+    transform: translateY(-2px) scale(1.02);
+    background-color: rgba(32, 32, 32, 0.95);
+    transition: all 0.3s ease-in-out; 
 }
 .mobile-menu{
     display:none
@@ -781,7 +785,7 @@ header .grid-layout nav .nav-list li a:hover{
     transition:1s all ease
 }
 #s-skills .grid-layout #skills #skills-cards article:hover{
-    border:1px solid rgb(16, 52, 166)
+    border:1px solid #1034a6
 }
 @media screen and (max-width: 768px){
     #s-skills .grid-layout #skills #skills-cards article{
@@ -886,3 +890,178 @@ body.rolled .faixa-3d {
         opacity: 1; /* Torna-se totalmente visível */
     }
 }
+
+.nav-btn {
+    padding: 12px 24px;
+    background-color: #121559;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    font: 900 12px "Archivo", sans-serif;
+}
+  
+.nav-btn:hover {
+    background-color: #1C228C;
+}
+
+/* Garantir que o conteúdo acima do carrossel esteja separado corretamente */
+.carousel-header {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px; /* Espaçamento entre o texto e o carrossel */
+    width: 100%; /* Garantir que o cabeçalho ocupe toda a largura disponível */
+    box-sizing: border-box; /* Inclui o padding e border no cálculo da largura */
+    margin-left: 50px;;
+}
+
+/* Estilizar os textos do cabeçalho */
+.carousel-header p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.carousel-header h6 {
+    font-size: 16px;
+    color: #ddd; /* Cor mais suave para a legenda */
+    margin: 5px 0 20px;
+}
+
+/* Ajuste do carrossel */
+#carousel {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto; /* Centralizar o carrossel horizontalmente */
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#carousel img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Estilo para a modal (imagem ampliada) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para o modal */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilo para as setas de navegação */
+.arrow {
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+.retro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a1a, #000);
+    padding: 25px;
+    border: 4px solid #1034a6;
+    border-radius: 12px;
+    box-shadow: 
+      0 0 15px #000,
+      0 0 40px #1034a6,
+      0 0 60px #140042,
+      inset 0 0 20px rgba(255, 255, 255, 0.05);
+    width: fit-content;
+    margin: 40px auto;
+    position: relative;
+  }
+  
+  .retro img {
+    width: 320px;
+    height: auto;
+    filter: sepia(0.3) saturate(2) contrast(1.2) brightness(1.1);
+    image-rendering: pixelated;
+    border: 3px solid #1034a6;
+    border-radius: 6px;
+    box-shadow: 
+      0 0 20px #1034a6,
+      0 0 35px #140042,
+      0 0 50px rgba(0, 0, 0, 0.8);
+    animation: flicker 0.08s infinite alternate;
+    z-index: 2;
+  }
+  
+  @keyframes flicker {
+    0%   { opacity: 1; filter: brightness(1.1); }
+    50%  { opacity: 0.97; filter: brightness(1.15); }
+    100% { opacity: 0.93; filter: brightness(1.2); }
+  }
+  
+  .retro::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
+    z-index: 3;
+  }  

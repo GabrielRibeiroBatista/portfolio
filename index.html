@@ -32,19 +32,24 @@
     />
     <link rel="icon" href="assets/image/logo.jpeg" />
     <link rel="apple-touch-icon" href="assets/image/logo.jpeg" />
+    <script type="module" src="assets/js/carousel.js"></script>
     <script src="assets/js/svg-inject.min.js"></script>
-    <title>Portfólio // Gabriel Batista</title>
+    <title>Portfólio | Gabriel Batista</title>
   </head>
 
   <body>
     <header>
       <div class="grid-layout">
         <nav>
-          <img
+          <a href="#s-home"><img
             src="assets/image/circulo.png"
             width="150px"
             height="25px"
-          />
+          /></a>
+          <a href="#s-experience" class="nav-btn">Experiências</a>
+          <a href="#s-projects" class="nav-btn">Projetos</a>
+          <a href="#s-services" class="nav-btn">Serviços</a>
+          <a href="#s-skills" class="nav-btn">Conhecimentos</a>
         </nav>
       </div>
     </header>
@@ -55,22 +60,31 @@
           <div id="home">
             <div id="home-container-text">
               <h1 class="delayMediumReveal">
-                Ajudando empresas a construírem
-                <span>sistemas</span> de forma moderna e de alta
-                qualidade.
+                Desenvolvendo sistemas modernos e de alta <span>qualidade</span> que transformam processos em <span>performance</span>, e ideias em <span>resultados</span> reais.
               </h1>
               <p class="typewriter">
-                Desenvolvimento personalizado e escalável, com foco no processo e operacionalidade!
+                Soluções de desenvolvimento sob medida, pensadas para escalar com o seu negócio — com foco total em eficiência operacional e excelência em cada etapa do processo!
               </p>
 
+              <a
+                href="https://api.whatsapp.com/send/?phone=5519987022369&text=Oi%2C%20Gabriel!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os.&app_absent=0"
+                rel="noopener"
+                target="_blank"
+                class="delayExtraBigReveal"
+              >
+                Entre em contato comigo!
+              </a>
+
             </div>
-            
-            <img
-              src="assets/image/pc img.png"
-              alt="ìcone Gabriel"
-              onload="SVGInject(this)"
-              id="logo_big"
-            />
+
+            <div class="retro">
+              <img
+                src="assets/image/pc img.png"
+                alt="ìcone Gabriel"
+                onload="SVGInject(this)"
+                id="logo_big"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -89,7 +103,7 @@
               </h3>
 
               <p class="delayLargeReveal">
-                Meu nome é Gabriel Batista, desenvolvedor na Bauer do Brasil e freelancer como Full-Stack Developer. Especializo-me no desenvolvimento de sistemas escaláveis, focados em alta performance, integrações eficientes e automação de processos complexos.
+                Sou Gabriel Batista, desenvolvedor na Bauer do Brasil e freelancer especializado como Full-Stack Developer. Atuo com foco no desenvolvimento de sistemas robustos e escaláveis, priorizando alta performance, integrações inteligentes e automação de processos complexos para transformar operações em soluções ágeis e eficientes.
               </p>
               <nav class="delayLargeReveal">
                 <ul>
@@ -196,9 +210,10 @@
         <div class="grid-layout">
           <h2 class="delaySmallReveal">Projetos <span>.</span></h2>
           <div id="projects">
+
             <article class="intervalCardReveal steam">
               <h3>IA de Classificação Binária</h3>
-              <p>Sistema de Inteligência Artificial para classificação binária, utilizando bibliotecas modernas de Python como scikit-learn, pandas e numpy.</p>
+              <p>Projeto de Inteligência Artificial voltado para classificação binária, estruturado com um pipeline completo de machine learning — desde o tratamento e análise dos dados até o treinamento, validação e avaliação do modelo — utilizando bibliotecas consolidadas do ecossistema Python como scikit-learn, pandas e numpy.</p>
               <a
                 href="https://github.com/GabrielRibeiroBatista/Projeto_ia"
                 rel="noopener"
@@ -207,7 +222,37 @@
                 >Visualizar projeto
               </a>
             </article>
+
+            <article class="intervalCardReveal teslabank">
+              <h3>Oráculo de dados</h3>
+              <p>Projeto de Web Scraping Inteligente desenvolvido para monitoramento e extração automatizada de conteúdos jornalísticos em tempo real, estruturado com um pipeline robusto que abrange desde o carregamento e análise da estrutura HTML até o parsing e persistência dos dados extraídos. O sistema é altamente modular, com suporte tanto a scraping via requests + BeautifulSoup quanto via Selenium para lidar com páginas dinâmicas e restrições como bloqueios por 403 Forbidden. Utiliza logging avançado, controle de duplicação de entradas e suporte à extração de palavras-chave para análise semântica.</p>
+              <a
+                href="https://github.com/GabrielRibeiroBatista/oraculo-de-dados"
+                rel="noopener"
+                target="_blank"
+                id="teslabank"
+                >Visualizar projeto
+              </a>
+            </article>
+
           </div>
+          
+          <div class="carousel-header">
+            <h6>*Clique na imagem para ampliar*</h6>
+
+            <div id="carousel"></div>   
+
+          </div>
+
+          <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content">
+              <img id="modalImg" src="" alt="Imagem do Carrossel">
+              <span id="prev" class="arrow">&#10094;</span> <!-- Seta para voltar -->
+              <span id="next" class="arrow">&#10095;</span> <!-- Seta para avançar -->
+            </div>
+          </div>  
+
         </div>
       </section>
 
@@ -270,7 +315,7 @@
             <article id="skills-text">
               <h2 class="delaySmallReveal">Conhecimentos <span>.</span></h2>
               <p class="delayMediumReveal changeDescription">
-                *passe o cursor do mouse no card para ler*
+                *passe o mouse no card para ler*
               </p>
             </article>
 

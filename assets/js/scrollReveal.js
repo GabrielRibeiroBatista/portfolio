@@ -11,3 +11,15 @@ export function initScrollReveal() {
   sr.reveal(".delayExtraBigReveal", { delay: 600 });
   sr.reveal(".intervalCardReveal", { interval: 400 });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function () {
+      if (window.scrollY > 20) {
+          header.classList.add("scrolled");
+      } else {
+          header.classList.remove("scrolled");
+      }
+  });
+});

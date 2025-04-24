@@ -6,6 +6,6 @@ export function hoverChangeDescription(nameCard, text) {
   });
 
   document.querySelector(nameCard).addEventListener("mouseout", () => {
-    changeDescription.innerHTML = `*passe o cursor do mouse no card para ler*`;
+    changeDescription.innerHTML = `*passe o mouse no card para ler*`;
   });
 }
