@@ -17,7 +17,7 @@ hoverChangeExperience(
   Criei aplicativos multiplataforma usando Power Apps, Power Automate e Python, viabilizando soluções avançadas para a engenharia. Participei do desenvolvimento de um portal exclusivo para revendas com ferramentas como: controle documental do processo comercial, questionários para análise de mercado e um localizador de revendas totalmente customizável para site e clientes.
   <br><br>
   Administro servidores Linux e Windows, com serviços como Active Directory, Azure, NGINX e Apache. Todos os projetos contam com CI/CD. Participo ativamente de testes de segurança (SAST, DAST, Pentest) em parceria com equipes internacionais (ex: Áustria). Também desenvolvi integrações com o Monday via webhooks, conectando sistemas internos ao MEGA ERP.`,
-  "Analista de desenvolvimento de sistemas",
+  "Full-Stack Developer",
   "Bauer do Brasil",
   "08/2021 - até o momento"
 );
