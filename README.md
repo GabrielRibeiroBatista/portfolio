@@ -31,7 +31,7 @@ Para o desenvolvimento deste site utilizei as seguintes tecnologias:
 <table>
   <tr>
     <td align="center">
-      <a href="linktr.ee/gabrielrbatista">
+      <a href="https://linktr.ee/gabrielrbatista">
         <sub>
           <b>linkTree</b>
         </sub>
