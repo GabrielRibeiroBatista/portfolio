@@ -515,28 +515,28 @@ header.scrolled {
     flex-wrap:wrap;
     text-align:left
 }
-#s-projects .grid-layout #projects .teslabank{
+#s-projects .grid-layout #projects .oraculo{
     border:1px solid #e51d37
 }
-#s-projects .grid-layout #projects .teslabank:hover{
+#s-projects .grid-layout #projects .oraculo:hover{
     border:1px solid #e51d37
 }
-#s-projects .grid-layout #projects .naped{
+#s-projects .grid-layout #projects .ebook{
     border:1px solid #00a3ff
 }
-#s-projects .grid-layout #projects .naped:hover{
+#s-projects .grid-layout #projects .ebook:hover{
     border:1px solid #00a3ff
 }
-#s-projects .grid-layout #projects .efront{
+#s-projects .grid-layout #projects .hrc{
     border:1px solid #a6fb98
 }
-#s-projects .grid-layout #projects .efront:hover{
+#s-projects .grid-layout #projects .hrc:hover{
     border:1px solid #a6fb98
 }
-#s-projects .grid-layout #projects .steam{
+#s-projects .grid-layout #projects .ia{
     border:1px solid #536fed
 }
-#s-projects .grid-layout #projects .steam:hover{
+#s-projects .grid-layout #projects .ia:hover{
     border:1px solid #536fed
 }
 #s-projects .grid-layout #projects>article{
