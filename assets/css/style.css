@@ -1090,3 +1090,249 @@ body.rolled .faixa-3d {
     pointer-events: none;
     z-index: 3;
   }
+
+/* --- INÍCIO: ESTILOS DO CHATBOT --- */
+
+.chat-bot {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 10000;
+    width: 400px; /* Reduzido para melhor visualização em telas médias */
+    max-width: 90vw; /* Garante que não ultrapasse a tela em celulares */
+    height: 600px;
+    max-height: 80vh; /* Garante que não ultrapasse a tela em celulares */
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: none; /* Inicia escondido, controlado por JS */
+    flex-direction: column;
+    font-family: "Archivo", sans-serif; /* Garante a mesma fonte */
+}
+
+.chat-bot__header {
+    background-color: #121559; /* Usando sua paleta de cores */
+    padding: 13px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chat-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.chat-bot__header .chat-bot__avatar {
+    margin-right: 10px;
+}
+
+.chat-bot__header .chat-bot__avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+#chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-input-area {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1.6rem;
+    font-family: "Archivo", sans-serif;
+}
+
+#chat-input:focus {
+    outline: none;
+    border-color: #1034a6;
+}
+
+#chat-send {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: #1034a6; /* Usando sua paleta de cores */
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#chat-send:hover {
+    background-color: #1C228C;
+}
+
+/* Botão Flutuante */
+#chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1034a6;
+    border: 2px solid #fff;
+    border-radius: 50%; /* Deixa o botão redondo */
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    padding: 0; /* Remove o espaçamento interno */
+    
+    /* A PROPRIEDADE MAIS IMPORTANTE: */
+    overflow: hidden; /* Esconde tudo que sair do círculo */
+}
+
+#chat-toggle img {
+    width: 100%;
+    height: 100%;
+    /* Garante que a imagem cubra o espaço sem distorcer */
+    object-fit: cover;
+}
+
+#chat-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+#chat-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: #ffffff;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+#chat-close:hover {
+    opacity: 1;
+}
+
+#chat-bubble {
+  position: fixed;
+  /* Posiciona o balão acima do botão do chat */
+  bottom: 100px; /* 70px (altura do botão) + 20px (distância do fundo) + 10px (margem) */
+  right: 25px;
+  background-color: #ffffff;
+  color: #333;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: max-content;
+  max-width: 220px;
+  font-size: 1.5rem;
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  z-index: 9998; /* Fica abaixo do botão do chat, mas acima do resto */
+  
+  /* Estado inicial: escondido e ligeiramente deslocado */
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  visibility: hidden;
+  pointer-events: none; /* Não pode ser clicado quando invisível */
+  
+  /* Animação suave */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Pseudo-elemento para criar o triângulo do balão de fala */
+#chat-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; /* Posiciona o triângulo abaixo do balão */
+  right: 28px; /* Alinha com o botão */
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #ffffff;
+}
+
+/* Classe que o JavaScript irá adicionar para mostrar o balão */
+#chat-bubble.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Mensagens */
+.msg {
+    margin: 5px 0;
+    padding: 10px 14px;
+    border-radius: 18px;
+    line-height: 1.4;
+    font-size: 1.6rem;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.msg--user {
+    background-color: #e8f0ff;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.msg--bot {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.online-status {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.online-bot {
+    height: 8px;
+    width: 8px;
+    background-color: #4caf50; /* Verde para online */
+    border-radius: 50%;
+    margin-right: 6px;
+    border: 1px solid #fff;
+}
+
+/* Responsividade do Chatbot */
+@media (max-width: 480px) {
+    .chat-bot {
+        width: 100vw;
+        height: 100vh;
+        max-height: 100vh;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+    #chat-toggle {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+/* --- FIM: ESTILOS DO CHATBOT --- */
