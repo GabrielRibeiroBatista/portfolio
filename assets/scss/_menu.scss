@@ -27,6 +27,7 @@ header {
       .nav-list {
         list-style: none;
         display: flex;
+        align-items: center;
 
         li {
           margin-left: $gap-5;
@@ -69,6 +70,7 @@ header {
 .nav-list.active {
   visibility: initial;
   transition: 1s all ease;
+  visibility: visible; 
 }
 
 @keyframes navLinkFade {
@@ -103,20 +105,28 @@ header {
   .nav-list {
     text-align: center;
     position: absolute;
-    top: 100px;
+    top: 100px; /* altura do seu header */
     right: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 100px); /* Ocupa o resto da tela */
     z-index: 999;
     background-color: $bg-secondary;
     flex-direction: column;
+    align-items: center; /* Centraliza os itens */
+    justify-content: flex-start; /* Alinha no topo */
     padding-top: $gap-8;
+
+    /* Lógica de animação aprimorada */
+    transform: translateX(100%); /* Começa fora da tela, à direita */
+    opacity: 0;
     visibility: hidden;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
 
   header .grid-layout nav .nav-list li {
     opacity: 0;
     margin-bottom: $gap-5;
+    margin-left: 0;
 
     a {
       font-size: 2.4rem;
@@ -125,5 +135,6 @@ header {
 
   .mobile-menu {
     display: block;
+    cursor: pointer;
   }
 }

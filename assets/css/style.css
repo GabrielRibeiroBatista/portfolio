@@ -1,3 +1,4 @@
+/* Conteúdo completo e atualizado para assets/css/style.css */
 *{
     padding:0;
     margin:0;
@@ -118,8 +119,12 @@ header.scrolled {
     background-color: rgba(32, 32, 32, 0.95);
     transition: all 0.3s ease-in-out; 
 }
+
+/* --- INÍCIO DAS ALTERAÇÕES NO CSS --- */
+
 .mobile-menu{
-    display:none
+    display:none;
+    cursor: pointer;
 }
 .mobile-menu div{
     width:32px;
@@ -129,8 +134,9 @@ header.scrolled {
     transition:.4s
 }
 .nav-list.active{
-    visibility:initial;
-    transition:1s all ease
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
 }
 @keyframes navLinkFade{
     from{
@@ -151,34 +157,52 @@ header.scrolled {
 .mobile-menu.active .line3{
     transform:rotate(45deg) translate(-5px, -5px)
 }
+
+/* --- Regras para telas menores (Tablets e Celulares) --- */
 @media screen and (max-width: 992px){
-    body{
-        overflow-x:hidden
+    header{
+        padding:0px 24px
     }
+
     .nav-list{
         text-align:center;
         position:absolute;
-        top:100px;
+        top:100px; /* Altura do seu header */
         right:0;
         width:100vw;
-        height:100vh;
+        height: calc(100vh - 100px); /* Altura total menos o header */
         z-index:999;
         background-color:#151515;
         flex-direction:column;
-        padding-top:96px;
-        visibility:hidden
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 96px;
+
+        /* Lógica de animação com transform */
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
     }
     header .grid-layout nav .nav-list li{
         opacity:0;
-        margin-bottom:48px
+        margin-left:0px; /* Reseta margem do desktop */
+        margin-bottom:48px;
     }
     header .grid-layout nav .nav-list li a{
         font-size:2.4rem
     }
     .mobile-menu{
-        display:block
+        display:block;
+    }
+
+    /* Regra para esconder a imagem '.retro' */
+    #s-home .retro {
+        display: none;
     }
 }
+/* --- FIM DAS ALTERAÇÕES NO CSS --- */
+
 #s-home{
     padding:0px 50px;
     background-color:#111;
@@ -199,7 +223,8 @@ header.scrolled {
 }
 @media screen and (max-width: 992px){
     #s-home .grid-layout #home{
-        padding:0px
+        padding:0px;
+        justify-content: center; /* Garante que o texto fique centralizado quando a imagem sumir */
     }
 }
 #s-home .grid-layout #home #home-container-text{
@@ -1064,4 +1089,4 @@ body.rolled .faixa-3d {
     );
     pointer-events: none;
     z-index: 3;
-  }  
+  }
