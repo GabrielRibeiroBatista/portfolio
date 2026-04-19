@@ -1,54 +1,132 @@
 #s-services {
   @include spacing-section;
-  background-color: $bg-secondary;
+  background: linear-gradient(135deg, $bg-secondary 0%, $bg-tertiary 50%, $bg-secondary 100%);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
 
   .grid-layout {
     h2 {
       text-align: center;
       @include title-section();
+      margin-bottom: $gap-5;
 
       span {
-        color: $color-main;
+        background: linear-gradient(135deg, $color-accent 0%, $color-main 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
     }
 
     #services {
-      display: flex;
-      height: auto;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: $gap-4;
       margin: $gap-3 0px;
+      position: relative;
+      z-index: 2;
 
       article {
-        background-color: $bg-main;
+        background: linear-gradient(135deg, rgba(17, 17, 17, 0.6) 0%, rgba(21, 21, 21, 0.6) 100%);
         @include block-article;
-        border: 1px solid $bg-border;
-        border-radius: 4px;
+        border: 1px solid rgba(16, 52, 166, 0.1);
+        border-radius: 16px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: $gap-5 $gap-4;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle at 50% 0%, rgba(16, 52, 166, 0.2), transparent 70%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, $color-main, $color-accent);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.4s ease;
+        }
+
+        &:hover {
+          transform: translateY(-12px) scale(1.02);
+          border: 1px solid rgba(0, 212, 255, 0.3);
+          box-shadow: 
+            0 20px 48px rgba(16, 52, 166, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+          &::before {
+            opacity: 1;
+          }
+
+          &::after {
+            transform: scaleX(1);
+          }
+        }
 
         div {
-          height: 90px;
+          height: auto;
+          margin-bottom: $gap-3;
+          transition: transform 0.3s ease;
 
           img {
-            width: 70px;
+            width: 80px;
+            height: 80px;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 12px rgba(16, 52, 166, 0.3));
           }
+        }
+
+        &:hover div img {
+          transform: scale(1.25) rotate(12deg);
+          filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
         }
 
         h3 {
-          padding: $gap-3 0px;
+          padding: 0;
           color: $color-white;
-
-          font: {
-            size: 2.4rem;
-            weight: 500;
-          }
+          margin-bottom: $gap-2;
+          background: linear-gradient(135deg, $color-white 0%, $color-accent 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          font-size: 2.2rem;
+          font-weight: 700;
         }
 
         p {
-          line-height: 3.2rem;
+          line-height: 1.6;
           color: $color-gray;
-
-          font: {
-            size: 1.8rem;
-          }
+          font-size: 1.5rem;
         }
       }
     }

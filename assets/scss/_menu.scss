@@ -1,14 +1,26 @@
 header {
   padding: 0px 50px;
-  background: $bg-main;
-  backdrop-filter: blur($gap-3);
-  -webkit-backdrop-filter: blur($gap-3);
-  border-bottom: 1px solid #101013;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(16, 52, 166, 0.2);
   z-index: 999;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+  }
 
   @include responsive-tablet() {
     padding: 0px $gap-3;
@@ -40,13 +52,30 @@ header {
             @include hover-link();
             color: $color-gray;
             position: relative;
+            transition: all 0.3s ease;
 
             font: {
               size: 1.8rem;
+              weight: 500;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 2px;
+              bottom: -6px;
+              left: 0;
+              background: linear-gradient(90deg, $color-main, $color-accent);
+              transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
 
             &:hover {
               color: $color-white;
+
+              &::after {
+                width: 100%;
+              }
             }
           }
         }

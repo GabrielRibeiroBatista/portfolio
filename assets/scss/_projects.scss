@@ -1,141 +1,125 @@
 #s-projects {
   @include spacing-section;
   text-align: center;
-  background-color: $bg-main;
+  background: linear-gradient(135deg, $bg-main 0%, $bg-tertiary 50%, $bg-main 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(16, 52, 166, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
 
   .grid-layout {
     h2 {
       @include title-section();
+      margin-bottom: $gap-5;
 
       span {
-        color: $color-main;
+        background: linear-gradient(135deg, $color-main 0%, $color-accent 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
     }
 
     #projects {
       margin: $gap-3 0px;
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: $gap-4;
       text-align: left;
-
-      .teslabank {
-        border: 1px solid #e51d37;
-
-        &:hover {
-          border: 1px solid #e51d37;
-        }
-      }
-
-      .naped {
-        border: 1px solid #00a3ff;
-
-        &:hover {
-          border: 1px solid #00a3ff;
-        }
-      }
-
-      .efront {
-        border: 1px solid #a6fb98;
-
-        &:hover {
-          border: 1px solid #a6fb98;
-        }
-      }
-
-      .steam {
-        border: 1px solid #536fed;
-
-        &:hover {
-          border: 1px solid #536fed;
-        }
-      }
+      position: relative;
+      z-index: 2;
 
       > article {
         @include block-article;
-        background-color: $bg-secondary;
-        height: auto;
+        background: linear-gradient(135deg, rgba(21, 21, 21, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(16, 52, 166, 0.2);
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background: linear-gradient(90deg, $color-main, $color-accent);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.4s ease;
+          z-index: 10;
+        }
+
+        &:hover {
+          transform: translateY(-16px) scale(1.02);
+          border-color: rgba(0, 212, 255, 0.4);
+          box-shadow: 
+            0 24px 60px rgba(16, 52, 166, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+          &::before {
+            transform: scaleX(1);
+          }
+        }
 
         h3 {
           color: $color-white;
-
-          font: {
-            size: 2.4rem;
-            weight: 500;
-          }
+          margin-bottom: 8px;
+          font-size: 2rem;
+          font-weight: 700;
+          background: linear-gradient(135deg, $color-white 0%, $color-accent 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          padding: $gap-4 $gap-4 0 $gap-4;
+          padding-top: $gap-4;
         }
 
         p {
-          line-height: $gap-3;
-          margin: $gap-3 $gap-0;
           color: $color-gray;
-          line-height: 3.2rem;
+          font-size: 1.5rem;
+          line-height: 1.6;
+          flex-grow: 1;
+          padding: $gap-2 $gap-4;
+        }
 
-          font: {
-            size: 1.8rem;
+        a {
+          padding: $gap-2 $gap-4 $gap-4 $gap-4;
+          color: $color-accent;
+          font-weight: 600;
+          font-size: 1.4rem;
+          transition: all 0.3s ease;
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+
+          &::after {
+            content: "→";
+            transition: transform 0.3s ease;
+          }
+
+          &:hover::after {
+            transform: translateX(4px);
           }
         }
-      }
-    }
-
-    #teslabank {
-      color: #e51d37;
-
-      &::after {
-        background: linear-gradient(270deg, #e51d37 0%, #17161d 100%);
-      }
-    }
-
-    #naped {
-      color: #00a3ff;
-
-      &::after {
-        background: linear-gradient(270deg, #00a3ff 0%, #17161d 100%);
-      }
-    }
-
-    #efront {
-      color: #a6fb98;
-
-      &::after {
-        background: linear-gradient(270deg, #a6fb98 0%, #17161d 100%);
-      }
-    }
-
-    #steam {
-      color: #536fed;
-
-      &::after {
-        background: linear-gradient(270deg, #536fed 0%, #17161d 100%);
-      }
-    }
-
-    a {
-      @include hover-link();
-      color: $color-main;
-      position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 1px;
-        bottom: -7px;
-        left: 0;
-        transform-origin: bottom right;
-        transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
-      }
-
-      font: {
-        size: 2rem;
-        weight: 400;
-      }
-
-      &:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
       }
     }
   }

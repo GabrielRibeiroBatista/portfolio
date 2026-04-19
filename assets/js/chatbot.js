@@ -36,16 +36,14 @@
 
   // --- FUNÇÕES PARA ABRIR E FECHAR O CHAT ---
   function openChat() {
-    chatWin.style.display = 'flex';
+    chatWin.classList.add('open');
     chatToggle.setAttribute('aria-expanded', 'true');
     input.focus();
-    chatToggle.style.display = 'none';
   }
 
   function closeChat() {
-    chatWin.style.display = 'none';
+    chatWin.classList.remove('open');
     chatToggle.setAttribute('aria-expanded', 'false');
-    chatToggle.style.display = 'flex';
   }
 
   chatToggle.addEventListener('click', openChat);
@@ -55,7 +53,20 @@
   function appendMsg(text, who = 'user') {
     const msgDiv = document.createElement('div');
     msgDiv.className = `msg msg--${who}`;
-    msgDiv.textContent = text;
+    
+    // Converte formatação markdown simples em HTML
+    if (who === 'bot') {
+      // Converte [texto](url) em <a href="url" target="_blank">texto</a>
+      text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+      // Converte **texto** em <strong>texto</strong>
+      text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      // Converte quebras de linha em <br>
+      text = text.replace(/\n/g, '<br>');
+      msgDiv.innerHTML = text;
+    } else {
+      msgDiv.textContent = text;
+    }
+    
     msgsContainer.appendChild(msgDiv);
     msgsContainer.scrollTop = msgsContainer.scrollHeight;
   }
@@ -85,7 +96,7 @@
 
     const typingIndicator = showTyping();
     
-    const encodedURL = 'aHR0cHM6Ly9zd2luZS1ib3NzLWdlbmVyYWxseS5uZ3Jvay1mcmVlLmFwcC93ZWJob29rLzAwNWI1ZTZlLTM4ZmEtNGQyOC1iOTI2LTY5Njk4ZmE3ODVjOA==';
+    const encodedURL = 'aHR0cHM6Ly9hdXRvbWF0aW9uLmhyYzIubmV0LmJyL3dlYmhvb2svNzRmODZlZTItYjM2Ny00ZDFlLWI2MGEtODQzYzk2NTYwM2M0';
 
     const webhookURL = atob(encodedURL);
     try {
