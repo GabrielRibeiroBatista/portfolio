@@ -9,17 +9,25 @@ initScrollReveal();
 typeWrite(document.querySelector(".typewriter"));
 
 hoverChangeExperience(
+  ".bauer-sup",
+  `Atuo na intersecção entre a estratégia de negócios e a execução tecnológica. Sou responsável pela liderança e coordenação de equipes multidisciplinares de alta performance, abrangendo desde o desenvolvimento de software em diversas linguagens e frameworks até a gestão completa da infraestrutura e do suporte ao usuário.<br><br>Tenho sob minha responsabilidade o ciclo de vida completo de todas as aplicações proprietárias (self-owned) da empresa. Isso inclui desde a concepção da arquitetura e definição da stack tecnológica até a implementação de práticas de DevOps, conteinerização com Docker e orquestração de servidores. Gerencio de produtos internos, assegurando que cada entrega esteja alinhada aos objetivos estratégicos e às demandas de escalabilidade do negócio.<br><br>Mantenho uma atuação ativamente participativa ("hands-on") no desenvolvimento de sistemas críticos. Essa proximidade com o código e com a arquitetura me permite mentorar a equipe com precisão, implementar padrões rigorosos de qualidade, segurança da informação (incluindo práticas de proteção de APIs e análise de vulnerabilidades) e automação de processos que otimizam o tempo de resposta do setor.`,
+  "Supervisor de TI e Desenvolvimento",
+  "Bauer do Brasil",
+  "04/2026 - até o momento"
+);
+
+hoverChangeExperience(
   ".bauer",
   `Atuo como desenvolvedor Full Stack com foco em Back-end com Python, utilizando frameworks como Django, Flask e Streamlit. Fui responsável pela criação da Intranet corporativa e de uma plataforma proprietária que centraliza as principais ferramentas internas da empresa.
   <br><br>
-  Desenvolvi soluções como: sistema de RH para gestão do fluxo de vagas; ferramenta de PDI com regras e fluxos personalizados; sistema de reserva de veículos com validação de CNH, liberação pela portaria e checklist de saída/retorno; controle de OS para terceiros com envio automático de e-mails e gestão documental; integrações com o MEGA ERP para automação de cadastros, relatórios e coleta de dados de inventário com apps Android integrados a coletores Chainway/Zebra; integração entre MEGA e o PDM PRO.FILE para controle de itens.
+  Desenvolvi soluções como: sistema de RH para gestão do fluxo de vagas; ferramenta de PDI com regras e fluxos personalizados; sistema de reserva de veículos com validação de CNH, liberação pela portaria e checklist de saída/retorno; controle de OS para terceiros com envio automático de e-mails e gestão documental; integrações com o MEGA ERP para automação de cadastros, relatórios e coleta de dados de inventário com apps Android integrados a coletores Chainway/Zebra; integração entre MEGA e o PDM PRO.FILE para controle de itens; e também o desenvolvimento de um Chatbot com Inteligência Artificial utilizando técnicas de RAG (Retrieval-Augmented Generation) e Machine Learning.
   <br><br>
   Criei aplicativos multiplataforma usando Power Apps, Power Automate e Python, viabilizando soluções avançadas para a engenharia. Participei do desenvolvimento de um portal exclusivo para revendas com ferramentas como: controle documental do processo comercial, questionários para análise de mercado e um localizador de revendas totalmente customizável para site e clientes.
   <br><br>
   Administro servidores Linux e Windows, com serviços como Active Directory, Azure, NGINX e Apache. Todos os projetos contam com CI/CD. Participo ativamente de testes de segurança (SAST, DAST, Pentest) em parceria com equipes internacionais (ex: Áustria). Também desenvolvi integrações com o Monday via webhooks, conectando sistemas internos ao MEGA ERP.`,
   "Full-Stack Developer",
   "Bauer do Brasil",
-  "08/2021 - até o momento"
+  "08/2021 - 04/2026"
 );
 
 hoverChangeExperience(
