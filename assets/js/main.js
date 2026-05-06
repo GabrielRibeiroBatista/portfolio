@@ -3,6 +3,7 @@ import { hoverChangeExperience } from "./hoverChangeExperience.js";
 import { typeWrite } from "./typeWrite.js";
 import { hoverChangeDescription } from "./hoverChangeDescription.js";
 import { menu } from "./menu.js";
+import "./i18n.js"; // Initialize translations
 
 menu();
 initScrollReveal();
@@ -10,94 +11,87 @@ typeWrite(document.querySelector(".typewriter"));
 
 hoverChangeExperience(
   ".bauer-sup",
-  `Atuo na intersecção entre a estratégia de negócios e a execução tecnológica. Sou responsável pela liderança e coordenação de equipes multidisciplinares de alta performance, abrangendo desde o desenvolvimento de software em diversas linguagens e frameworks até a gestão completa da infraestrutura e do suporte ao usuário.<br><br>Tenho sob minha responsabilidade o ciclo de vida completo de todas as aplicações proprietárias (self-owned) da empresa. Isso inclui desde a concepção da arquitetura e definição da stack tecnológica até a implementação de práticas de DevOps, conteinerização com Docker e orquestração de servidores. Gerencio de produtos internos, assegurando que cada entrega esteja alinhada aos objetivos estratégicos e às demandas de escalabilidade do negócio.<br><br>Mantenho uma atuação ativamente participativa ("hands-on") no desenvolvimento de sistemas críticos. Essa proximidade com o código e com a arquitetura me permite mentorar a equipe com precisão, implementar padrões rigorosos de qualidade, segurança da informação (incluindo práticas de proteção de APIs e análise de vulnerabilidades) e automação de processos que otimizam o tempo de resposta do setor.`,
-  "Supervisor de TI e Desenvolvimento",
-  "Bauer do Brasil",
-  "04/2026 - até o momento"
+  "exp_desc_bauer_sup",
+  "exp_role_bauer_sup",
+  "exp_comp_bauer_sup",
+  "exp_date_bauer_sup"
 );
 
 hoverChangeExperience(
   ".bauer",
-  `Atuo como desenvolvedor Full Stack com foco em Back-end com Python, utilizando frameworks como Django, Flask e Streamlit. Fui responsável pela criação da Intranet corporativa e de uma plataforma proprietária que centraliza as principais ferramentas internas da empresa.
-  <br><br>
-  Desenvolvi soluções como: sistema de RH para gestão do fluxo de vagas; ferramenta de PDI com regras e fluxos personalizados; sistema de reserva de veículos com validação de CNH, liberação pela portaria e checklist de saída/retorno; controle de OS para terceiros com envio automático de e-mails e gestão documental; integrações com o MEGA ERP para automação de cadastros, relatórios e coleta de dados de inventário com apps Android integrados a coletores Chainway/Zebra; integração entre MEGA e o PDM PRO.FILE para controle de itens; e também o desenvolvimento de um Chatbot com Inteligência Artificial utilizando técnicas de RAG (Retrieval-Augmented Generation) e Machine Learning.
-  <br><br>
-  Criei aplicativos multiplataforma usando Power Apps, Power Automate e Python, viabilizando soluções avançadas para a engenharia. Participei do desenvolvimento de um portal exclusivo para revendas com ferramentas como: controle documental do processo comercial, questionários para análise de mercado e um localizador de revendas totalmente customizável para site e clientes.
-  <br><br>
-  Administro servidores Linux e Windows, com serviços como Active Directory, Azure, NGINX e Apache. Todos os projetos contam com CI/CD. Participo ativamente de testes de segurança (SAST, DAST, Pentest) em parceria com equipes internacionais (ex: Áustria). Também desenvolvi integrações com o Monday via webhooks, conectando sistemas internos ao MEGA ERP.`,
-  "Full-Stack Developer",
-  "Bauer do Brasil",
-  "08/2021 - 04/2026"
+  "exp_desc_bauer_dev",
+  "exp_role_bauer_dev",
+  "exp_comp_bauer_dev",
+  "exp_date_bauer_dev"
 );
 
 hoverChangeExperience(
   ".hrc",
-  `Trabalho como professor e desenvolvedor na Hacker Revolution Cyber Café - HRC², onde adotamos os apelidos de "Baristas", sou responsável pela coordenação da equipe de desenvolvimento, que atua em diversos sistemas focados em Segurança da Informação, Cybersegurança e Ethical Hacking.
-  Participo em atividades de Pentest, SAST e DAST, bem como análise em sites e sistemas de clientes.`,
-  "Barista Supremo  - Professor | Integrante Diretor",
-  "Hacker Revolution Cyber Café - HRC²",
-  "01/2024 - até o momento"
+  "exp_desc_hrc",
+  "exp_role_hrc",
+  "exp_comp_hrc",
+  "exp_date_hrc"
 );
 
 hoverChangeExperience(
   ".idciber",
-  `Atuo como coordenador na equipe de infraestruturas críticas, liderando o desenvolvimento de frameworks avançados para fortalecer a cibersegurança e combater ameaças emergentes.`,
-  "Coordenador de Infraestruturas Críticas",
-  "IDCIBER",
-  "03/2024 - até o momento"
+  "exp_desc_idciber",
+  "exp_role_idciber",
+  "exp_comp_idciber",
+  "exp_date_idciber"
 );
 
 hoverChangeExperience(
   ".nextconsult",
-  `Fui responsável pela formatação de contratos, acompanhamento de pipelines de vendas e atendimento ao cliente (SAC), assegurando eficiência e organização nos processos internos da empresa.`,
-  "BackOffice",
-  "Next Consult",
-  "06/2019 - 08/2020"
+  "exp_desc_next",
+  "exp_role_next",
+  "exp_comp_next",
+  "exp_date_next"
 );
 
 hoverChangeExperience(
   ".unifae",
-  `Trabalhei no desenvolvimento front-end com PHP, criando páginas institucionais usando HTML, JavaScript e PHP, focando em interfaces eficientes e funcionais para melhorar a experiência do usuário.`,
-  "Estagiário ASCOM (Assessoria de comunicações)",
-  "UniFAE",
-  "08/2018 - 05/2019"
+  "exp_desc_unifae",
+  "exp_role_unifae",
+  "exp_comp_unifae",
+  "exp_date_unifae"
 );
 
 hoverChangeDescription(
   ".html",
-  "HTML (HyperText Markup Language) é uma linguagem de marcação que define a estrutura das páginas web, permitindo a organização e apresentação de conteúdos através de elementos como títulos, parágrafos, links e imagens."
+  "desc_html"
 );
 hoverChangeDescription(
   ".css",
-  "CSS (Cascading Style Sheets) é uma linguagem de estilo que possibilita a personalização e o design visual das páginas web, utilizando regras que aplicam cores, fontes e layouts a diferentes elementos de forma modular e reutilizável."
+  "desc_css"
 );
 hoverChangeDescription(
   ".js",
-  "JavaScript é uma linguagem de programação versátil que permite a implementação de elementos dinâmicos e interativos em páginas web, possibilitando a criação de funcionalidades avançadas, como animações, manipulação de eventos e comunicação assíncrona com servidores."
+  "desc_js"
 ); 
 hoverChangeDescription(
   ".python",
-  "Python é uma linguagem de programação de alto nível, versátil e de fácil leitura, que permite o desenvolvimento rápido de aplicações em diversas áreas, como web, automação, ciência de dados e inteligência artificial, promovendo eficiência e produtividade para os desenvolvedores."
+  "desc_python"
 ); 
 hoverChangeDescription(
   ".api",
-  "Uma API (Interface de Programação de Aplicações) é um conjunto de regras e protocolos que permite que diferentes softwares se comuniquem entre si. Elas podem ser implementadas de várias formas, incluindo APIs REST, que utilizam o protocolo HTTP para facilitar a troca de dados em formato JSON ou XML; APIs SOAP, que seguem um protocolo mais rígido e utilizam XML para a comunicação; e GraphQL, que permite que os clientes solicitem exatamente os dados necessários, otimizando a transferência de informações entre sistemas."
+  "desc_api"
 ); 
 hoverChangeDescription(
   ".sql",
-  "SQL (Structured Query Language) é uma linguagem de programação padrão utilizada para gerenciar e manipular bancos de dados relacionais. Com SQL, você pode realizar operações como consultas, inserções, atualizações e exclusões de dados, além de definir e modificar estruturas de banco de dados. Sua sintaxe clara e intuitiva torna o SQL uma ferramenta essencial para desenvolvedores e analistas de dados que trabalham com grandes volumes de informações."
+  "desc_sql"
 ); 
 hoverChangeDescription(
   ".linux",
-  "Linux Server é uma versão do sistema operacional Linux projetada para gerenciar e operar servidores, oferecendo estabilidade, segurança e escalabilidade, permitindo que você implemente aplicações e serviços em um ambiente confiável."
+  "desc_linux"
 ); 
 hoverChangeDescription(
   ".windows",
-  "Windows Server é uma plataforma de sistema operacional desenvolvida pela Microsoft, projetada para gerenciar e operar servidores, oferecendo ferramentas robustas para administração, segurança e virtualização, permitindo que você implemente e gerencie serviços e aplicações em uma infraestrutura de TI eficiente."
+  "desc_windows"
 );
 hoverChangeDescription(
   ".django",
-  "Django é um framework web de alto nível para Python, focado em desenvolvimento rápido e design limpo. Ele oferece uma estrutura completa com funcionalidades integradas, como autenticação, ORM e painel administrativo, ideal para projetos complexos."
+  "desc_django"
 );
 hoverChangeDescription(
   ".flask",

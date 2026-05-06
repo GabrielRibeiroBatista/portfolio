@@ -124,7 +124,8 @@
 
     } catch (error) {
       console.error('Falha ao contatar o webhook:', error);
-      appendMsg('Desculpe, não consegui me conectar ao meu cérebro. Tente novamente mais tarde.', 'bot');
+      const errorMsg = window.t ? window.t("chat_bot_error") : 'Desculpe, não consegui me conectar ao meu cérebro. Tente novamente mais tarde.';
+      appendMsg(errorMsg, 'bot');
     } finally {
       typingIndicator.remove();
     }

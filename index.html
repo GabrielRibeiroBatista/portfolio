@@ -79,11 +79,16 @@
           </a>
 
           <ul class="nav-list">
-            <li><a href="#s-about" class="nav-btn">Sobre</a></li>
-            <li><a href="#s-experience" class="nav-btn">Experiências</a></li>
-            <li><a href="#s-projects" class="nav-btn">Projetos</a></li>
-            <li><a href="#s-services" class="nav-btn">Serviços</a></li>
-            <li><a href="#s-skills" class="nav-btn">Conhecimentos</a></li>
+            <li><a href="#s-about" class="nav-btn" data-i18n="nav_about">Sobre</a></li>
+            <li><a href="#s-experience" class="nav-btn" data-i18n="nav_exp">Experiências</a></li>
+            <li><a href="#s-projects" class="nav-btn" data-i18n="nav_proj">Projetos</a></li>
+            <li><a href="#s-services" class="nav-btn" data-i18n="nav_serv">Serviços</a></li>
+            <li><a href="#s-skills" class="nav-btn" data-i18n="nav_skills">Conhecimentos</a></li>
+            <li>
+              <button id="lang-toggle" class="nav-btn" style="background: none; border: 1px solid #1034A6; border-radius: 4px; padding: 4px 8px; cursor: pointer; color: white; font-weight: bold;">
+                EN
+              </button>
+            </li>
           </ul>
 
           <div class="mobile-menu">
@@ -100,16 +105,16 @@
         <div class="grid-layout">
           <div id="home">
             <div id="home-container-text">
-              <h1 class="delayMediumReveal">
+              <h1 class="delayMediumReveal" data-i18n="home_h1">
                 Desenvolvendo sistemas modernos e de alta <span>qualidade</span> que transformam processos em <span>performance</span>, e ideias em <span>resultados</span> reais.
               </h1>
-              <p class="typewriter">
+              <p class="typewriter" data-i18n="home_p">
                 Soluções de desenvolvimento sob medida, pensadas para escalar com o seu negócio — com foco total em eficiência operacional e excelência em cada etapa do processo!
               </p>
               
               <div class="home-ctas delayExtraBigReveal">
-                <a href="#s-projects" class="cta-primary">Ver Projetos</a>
-                <a href="https://linktr.ee/gabrielrbatista" target="_blank" rel="noopener" class="cta-secondary">Mais Links</a>
+                <a href="#s-projects" class="cta-primary" data-i18n="home_cta1">Ver Projetos</a>
+                <a href="https://linktr.ee/gabrielrbatista" target="_blank" rel="noopener" class="cta-secondary" data-i18n="home_cta2">Mais Links</a>
               </div>
 
             </div>
@@ -130,16 +135,16 @@
         <div class="grid-layout">
           <div>
             <div id="creator-photo" class="delayMediumReveal">
-              <h3 class="delayExtraBigReveal">Barista Supremo HRC² | Coordenador IDCIBER</h3>
+              <h3 class="delayExtraBigReveal" data-i18n="about_role_super">Barista Supremo HRC² | Coordenador IDCIBER</h3>
             </div>
             <div>
-              <h4 class="delayMediumReveal">Quem sou?</h4>
+              <h4 class="delayMediumReveal" data-i18n="about_who">Quem sou?</h4>
               <h2 class="delaySmallReveal">Gabriel Batista</h2>
-              <h3 class="delayMediumReveal">
+              <h3 class="delayMediumReveal" data-i18n="about_role">
                 Full-Stack Developer
               </h3>
 
-              <p class="delayLargeReveal">
+              <p class="delayLargeReveal" data-i18n="about_desc">
                 Sou Gabriel Batista, graduado em Análise e desenvolvimento de sistemas e pós-graduado em Arquitetura de software, atualmente trabalhando como Supervisor de TI na Bauer do Brasil e freelancer especializado como Full-Stack Developer. Atuo com foco no desenvolvimento de sistemas robustos e escaláveis, priorizando alta performance, integrações inteligentes e automação de processos complexos para transformar operações em soluções ágeis e eficientes.
               </p>
               <nav class="delayLargeReveal">
@@ -227,17 +232,17 @@
 
       <section id="s-experience">
         <div class="grid-layout">
-          <h2 class="delaySmallReveal">Experiências <span>.</span></h2>
+          <h2 class="delaySmallReveal" data-i18n="exp_title">Experiências <span>.</span></h2>
           <div id="experience">
             <div
               class="option-experience intervalCardReveal"
               id="experience-company"
             >
               <div class="company bauer-sup activeExperience">
-                <h3>Bauer (Supervisor)</h3>
+                <h3 data-i18n="exp_bauer_sup">Bauer (Supervisor)</h3>
               </div>
               <div class="company bauer">
-                <h3>Bauer (Developer)</h3>
+                <h3 data-i18n="exp_bauer_dev">Bauer (Developer)</h3>
               </div>
               <div class="company hrc">
                 <h3>HRC²</h3>
@@ -270,53 +275,57 @@
 
       <section id="s-projects">
         <div class="grid-layout">
-          <h2 class="delaySmallReveal">Projetos <span>.</span></h2>
+          <h2 class="delaySmallReveal" data-i18n="proj_title">Projetos <span>.</span></h2>
           <div id="projects">
 
             <article class="intervalCardReveal ia">
-              <h3>IA de Classificação Binária</h3>
-              <p>Projeto de Inteligência Artificial voltado para classificação binária, estruturado com um pipeline completo de machine learning — desde o tratamento e análise dos dados até o treinamento, validação e avaliação do modelo — utilizando bibliotecas consolidadas do ecossistema Python como scikit-learn, pandas e numpy.</p>
+              <h3 data-i18n="proj_ia_h3">IA de Classificação Binária</h3>
+              <p data-i18n="proj_ia_p">Projeto de Inteligência Artificial voltado para classificação binária, estruturado com um pipeline completo de machine learning — desde o tratamento e análise dos dados até o treinamento, validação e avaliação do modelo — utilizando bibliotecas consolidadas do ecossistema Python como scikit-learn, pandas e numpy.</p>
               <a
                 href="https://github.com/GabrielRibeiroBatista/Projeto_ia"
                 rel="noopener"
                 target="_blank"
                 id="ia"
+                data-i18n="proj_ia_a"
                 >Visualizar projeto
               </a>
             </article>
 
             <article class="intervalCardReveal hrc">
-              <h3>Institucional HRC²</h3>
-              <p>Site Institucional da HRC², desenvolvido com foco em oferecer uma presença digital moderna, responsiva e otimizada. O projeto foi estruturado para transmitir profissionalismo e credibilidade, abrangendo desde a arquitetura completa das páginas institucionais até a integração de seções estratégicas para apresentação de serviços e diferenciais. O design foi concebido de forma limpa e responsiva, garantindo adaptação a diferentes dispositivos e mantendo a identidade visual da marca. Foram implementadas práticas de otimização de performance e SEO para assegurar melhor posicionamento em buscadores, resultando em um site leve, de navegação intuitiva e alinhado às necessidades do mercado.</p>
+              <h3 data-i18n="proj_hrc_h3">Institucional HRC²</h3>
+              <p data-i18n="proj_hrc_p">Site Institucional da HRC², desenvolvido com foco em oferecer uma presença digital moderna, responsiva e otimizada. O projeto foi estruturado para transmitir profissionalismo e credibilidade, abrangendo desde a arquitetura completa das páginas institucionais até a integração de seções estratégicas para apresentação de serviços e diferenciais. O design foi concebido de forma limpa e responsiva, garantindo adaptação a diferentes dispositivos e mantendo a identidade visual da marca. Foram implementadas práticas de otimização de performance e SEO para assegurar melhor posicionamento em buscadores, resultando em um site leve, de navegação intuitiva e alinhado às necessidades do mercado.</p>
               <a
                 href="https://hrc2.net.br"
                 rel="noopener"
                 target="_blank"
                 id="hrc"
+                data-i18n="proj_hrc_a"
                 >Acessar Website
               </a>
             </article>
 
             <article class="intervalCardReveal oraculo">
-              <h3>Oráculo de dados</h3>
-              <p>Projeto de Web Scraping Inteligente desenvolvido para monitoramento e extração automatizada de conteúdos jornalísticos em tempo real, estruturado com um pipeline robusto que abrange desde o carregamento e análise da estrutura HTML até o parsing e persistência dos dados extraídos. O sistema é altamente modular, com suporte tanto a scraping via requests + BeautifulSoup quanto via Selenium para lidar com páginas dinâmicas e restrições como bloqueios por 403 Forbidden. Utiliza logging avançado, controle de duplicação de entradas e suporte à extração de palavras-chave para análise semântica.</p>
+              <h3 data-i18n="proj_oraculo_h3">Oráculo de dados</h3>
+              <p data-i18n="proj_oraculo_p">Projeto de Web Scraping Inteligente desenvolvido para monitoramento e extração automatizada de conteúdos jornalísticos em tempo real, estruturado com um pipeline robusto que abrange desde o carregamento e análise da estrutura HTML até o parsing e persistência dos dados extraídos. O sistema é altamente modular, com suporte tanto a scraping via requests + BeautifulSoup quanto via Selenium para lidar com páginas dinâmicas e restrições como bloqueios por 403 Forbidden. Utiliza logging avançado, controle de duplicação de entradas e suporte à extração de palavras-chave para análise semântica.</p>
               <a
                 href="https://github.com/GabrielRibeiroBatista/oraculo-de-dados"
                 rel="noopener"
                 target="_blank"
                 id="oraculo"
+                data-i18n="proj_oraculo_a"
                 >Visualizar projeto
               </a>
             </article>
 
             <article class="intervalCardReveal ebook">
-              <h3>E-book - Da Fundação à Publicação com Django</h3>
-              <p>O livro "Da Fundação à Publicação com Django" foi escrito para quem deseja aprender a desenvolver aplicações web do zero, seguindo boas práticas de programação e explorando de forma completa os recursos do framework Django.</p>
+              <h3 data-i18n="proj_ebook_h3">E-book - Da Fundação à Publicação com Django</h3>
+              <p data-i18n="proj_ebook_p">O livro "Da Fundação à Publicação com Django" foi escrito para quem deseja aprender a desenvolver aplicações web do zero, seguindo boas práticas de programação e explorando de forma completa os recursos do framework Django.</p>
               <a
                 href="https://www.amazon.com.br/dp/B0FC32CPMS?"
                 rel="noopener"
                 target="_blank"
                 id="ebook"
+                data-i18n="proj_ebook_a"
                 >Visualizar E-book (Prévia)
               </a>
             </article>
@@ -344,7 +353,7 @@
 
       <section id="s-services">
         <div class="grid-layout">
-          <h2 class="delaySmallReveal">Serviços <span>.</span></h2>
+          <h2 class="delaySmallReveal" data-i18n="serv_title">Serviços <span>.</span></h2>
           <div id="services">
             <article class="intervalCardReveal">
               <div>
@@ -355,8 +364,8 @@
                   alt="ícone layers"
                 />
               </div>
-              <h3>Integrações</h3>
-              <p>
+              <h3 data-i18n="serv_1_h3">Integrações</h3>
+              <p data-i18n="serv_1_p">
                 Desenvolvimento e implementação de integrações entre diferentes sistemas, garantindo a interoperabilidade e otimização dos processos.
               </p>
             </article>
@@ -370,8 +379,8 @@
                   alt="ícone imagem"
                 />
               </div>
-              <h3>Motion</h3>
-              <p>
+              <h3 data-i18n="serv_2_h3">Motion</h3>
+              <p data-i18n="serv_2_p">
                 Criação de interações que transmitem sensação de modernidade, além de
                 chamarem a atenção do usuário.
               </p>
@@ -386,8 +395,8 @@
                   alt="ícone código"
                 />
               </div>
-              <h3>Desenvolvimento</h3>
-              <p>
+              <h3 data-i18n="serv_3_h3">Desenvolvimento</h3>
+              <p data-i18n="serv_3_p">
                 Desenvolvimento de sistemas robustos e escaláveis, criando APIs, gerenciando bancos de dados e integrando serviços para garantir a performance e segurança das aplicações.
               </p>
             </article>
@@ -399,8 +408,8 @@
         <div class="grid-layout">
           <div id="skills">
             <article id="skills-text">
-              <h2 class="delaySmallReveal">Conhecimentos <span>.</span></h2>
-              <p class="delayMediumReveal changeDescription">
+              <h2 class="delaySmallReveal" data-i18n="skills_title">Conhecimentos <span>.</span></h2>
+              <p class="delayMediumReveal changeDescription" data-i18n="skills_hover">
                 *passe o mouse no card para ler*
               </p>
             </article>
@@ -559,26 +568,26 @@
           <img src="assets/image/Anubis_circle.jpg" alt="Avatar do assistente Anubis">
         </div>
         <div>
-          <strong id="chat-title">Anubis (Assistente Virtual)</strong>
+          <strong id="chat-title" data-i18n="chat_bot_title">Anubis (Assistente Virtual)</strong>
           <div class="online-status">
             <span class="online-bot"></span>
-            <span>Online</span>
+            <span data-i18n="chat_bot_online">Online</span>
           </div>
         </div>
         <button id="chat-close" aria-label="Fechar chat">&times;</button>
       </div>
 
       <div id="chat-messages" aria-live="polite">
-        <div class="msg msg--bot">Olá! Sou Anubis, assistente pessoal de IA do Gabriel. Como posso te ajudar hoje?</div>
+        <div class="msg msg--bot" data-i18n="chat_bot_msg">Olá! Sou Anubis, assistente pessoal de IA do Gabriel. Como posso te ajudar hoje?</div>
       </div>
 
       <div id="chat-input-area">
-        <input type="text" id="chat-input" placeholder="Digite sua mensagem..." autocomplete="off" aria-label="Digite sua mensagem">
-        <button id="chat-send" type="button" aria-label="Enviar mensagem">Enviar</button>
+        <input type="text" id="chat-input" placeholder="Digite sua mensagem..." autocomplete="off" aria-label="Digite sua mensagem" data-i18n="chat_bot_placeholder">
+        <button id="chat-send" type="button" aria-label="Enviar mensagem" data-i18n="chat_bot_send">Enviar</button>
       </div>
     </div>
 
-    <div id="chat-bubble" class="chat-bubble">
+    <div id="chat-bubble" class="chat-bubble" data-i18n="chat_bubble">
       Olá! Se precisar de ajuda, estou por aqui.
     </div>
 
@@ -588,7 +597,7 @@
 
       <footer>
         <div class="grid-layout">
-          <p>
+          <p data-i18n="footer">
             Copyright © 2026 Gabriel Batista | Full-Stack Developer | Todos os direitos reservados.
           </p>
         </div>
